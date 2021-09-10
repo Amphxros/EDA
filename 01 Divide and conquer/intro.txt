@@ -1,0 +1,22 @@
+
+plantilla
+
+
+bool method(std::vector<T*> vec, int ini, int fin){
+    int mit = ini+ fin/2;
+
+    if(ini==fin ){
+        ...
+    }
+    else{
+...
+    }
+
+
+}
+
+int main(){
+....
+
+}
+
