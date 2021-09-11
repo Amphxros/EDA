@@ -1,26 +1,17 @@
 #include <iostream>
 
-
-int result(int n) {
-	return 2 * n;
-}
-void resolve() {
-	int j;
-	std::cin >> j;
-	j = result(j);
-	std::cout << j;
-
-}
-
 int main() {
 
-	int numCasos=0;
+	int numCasos;
+	int n;
 
 	std::cin >> numCasos;
 
 	for (int i = 0; i < numCasos; i++) {
-		resolve();
+		std::cin >> n;						//o(1)
+		std::cout << 2 * n << std::endl;	// o(1)
 	}
+	//coste total o(n) donde n= numCasos
 
 	return 0;
 }
