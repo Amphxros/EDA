@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\10 Hermanos Dalton\10 Hermanos Dalton\main.cpp(19,11): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\10 Hermanos Dalton\10 Hermanos Dalton\main.cpp(23,8): warning C4018: '>=': no coinciden signed/unsigned
+LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\10 Hermanos Dalton\Debug\10 Hermanos Dalton.exe para escritura
