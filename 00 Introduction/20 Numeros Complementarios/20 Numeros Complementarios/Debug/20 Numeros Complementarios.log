@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(76,5): warning : Acceso denegado a la ruta de acceso 'c:\users\ampac\documents\git_repositorios\ucm_repos\eda\00 introduction\20 numeros complementarios\debug\20 numeros complementarios.exe'.
+  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\20 Numeros Complementarios\main.cpp(23,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\20 Numeros Complementarios\main.cpp(25,30): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\20 Numeros Complementarios\main.cpp(26,29): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\Debug\20 Numeros Complementarios.exe'

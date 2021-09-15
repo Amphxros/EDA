@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\20 Numeros Complementarios\main.cpp(25,40): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\20 Numeros Complementarios\main.cpp(26,39): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+  20 Numeros Complementarios.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\20 Numeros Complementarios\x64\Debug\20 Numeros Complementarios.exe
