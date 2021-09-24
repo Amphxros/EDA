@@ -2,6 +2,34 @@
 #include <vector>
 #include <fstream>
 
+bool resuelve( const std::vector<int>& v) {
+	
+	int cont = 0;
+	for (int i = 0; i < v.size() - 1; i++) {
+		if (v[i] < v[i + 1]) {
+			cont++;
+		}
+		else if (v[i] > v[i + 1]) {
+			cont--;
+		}
+	}
+	
+	return cont == v.size() - 1 || cont == -v.size() + 1;
+	
+	/* otra opcion con recursividad
+	
+	if (cond && sig>=v.size()) {
+		return true;
+	}
+	else {
+		if (cond && sig < v.size()) {
+			return resuelve(sig, sig + 1, cond, v);
+		}
+		else {
+			return false;
+		}
+	}*/
+}
 
 void result() {
 	int n;
@@ -14,23 +42,14 @@ void result() {
 		std::cin >> d;
 		vec[i] = d;
 	}
-
-
-	int j = 1;
-
-	bool crec = vec[j] > vec[j - 1];
-
-	// O(n-1) donde n= nºhermanos 
-	while ( j < n && ((crec && vec[j] > vec[j - 1]) || (!crec && vec[j] < vec[j - 1]))) {
-		j++;   
+	
+	//coste total O(n)
+	if (resuelve(vec)) {
+		std::cout << "DALTON" << "\n";
 	}
-	j++;
-	//constante en este caso
-	if (j <= n) {
-		std::cout << "DESCONOCIDOS" << std::endl;
-	}
+	
 	else {
-		std::cout << "DALTON" << std::endl;
+		std::cout << "DESCONOCIDOS" << "\n";
 	}
 }
 
@@ -46,8 +65,9 @@ int main() {
 
 	int numCasos;
 	std::cin >> numCasos;
-	for (int i = 0; i < numCasos; ++i)
+	for (int i = 0; i < numCasos; ++i){
 		result();
+	}
 
 
 	// Para restablecer entrada. Comentar para acepta el reto
