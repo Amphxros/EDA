@@ -1,3 +1,2 @@
 ﻿  main.cpp
-LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\10 Hermanos Dalton\x64\Debug\10 Hermanos Dalton.exe para escritura
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(810,5): error MSB6006: "link.exe" salió con el código 1168.
+  10 Hermanos Dalton.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\00 Introduction\10 Hermanos Dalton\x64\Debug\10 Hermanos Dalton.exe

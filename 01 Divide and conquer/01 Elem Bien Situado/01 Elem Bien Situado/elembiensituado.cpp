@@ -1,7 +1,6 @@
 // Amparo Rubio Bellon
 // VJ50
 
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -15,15 +14,17 @@ bool elemento_situado(const std::vector<int>& v, int ini, int fin) {
 		return v[ini] == ini;
 	}
 	else {
-		int mit = (ini + fin) / 2;
+		int mit = (ini + fin) / 2; //mitad
 
-		if (v[mit] > mit) {
+		//como está ordenado podemos comprobar por donde buscar
+
+		if (v[mit] > mit) {		//si es mayor v[mit] buscamos por la derecha
 			return  elemento_situado(v, mit, fin);
 		}
-		else if (v[mit] < mit) {
+		else if (v[mit] < mit) { // si es menor por la izquierda
 			return elemento_situado(v, ini, mit);
 		}
-		else
+		else //si no se cumple que v[mit] == mit
 			return true;
 	}
 }
