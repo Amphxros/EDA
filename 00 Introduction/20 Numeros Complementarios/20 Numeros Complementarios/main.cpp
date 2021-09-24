@@ -14,16 +14,24 @@ void result() {
 	std::vector<int> v;
 	int aux = num;
 	//partimos el nº coste O(m) donde m= nº de cifras que tiene num
-	while (aux > 0) {
+	while (aux >= 0) {
 		v.push_back(aux % 10);
 		aux /= 10;
+		if (aux == 0) {
+			aux -= 1;
+		}
+		//std::cout << aux % 10 << " ";
 	}
-
+	
+	int n = v.size()-1;
+	inv = 9 - v[0];
+	comp = 9-v[n];
 	//lo pasamos del vector al comp -> coste= O(m) donde m= nº de cifras que tiene num
-	for (int i = 0; i < v.size(); i++) {
-		int j = v[v.size() - 1 - i];
-		comp += std::abs((9-v[i]) *pow(10,i));
-		inv += std::abs((9 -j) * pow(10, i));
+	for (int i = 1; i < n+1; i++) {
+		comp *= 10;
+		inv *= 10;
+		comp += 9 - v[n-i];
+		inv += 9 - v[i];
 	}
 
 	std::cout << comp << " " << inv << std::endl;
@@ -33,10 +41,10 @@ void result() {
 int main() {
 	// Para la entrada por fichero.
    // Comentar para acepta el reto
-#ifndef DOMJUDGE
-	std::ifstream w("datos.txt");
-	auto cinbuf = std::cin.rdbuf(w.rdbuf()); //save old buf and redirect std::cin to casos.txt
-#endif 
+//#ifndef DOMJUDGE
+//	std::ifstream w("datos.txt");
+//	auto cinbuf = std::cin.rdbuf(w.rdbuf()); //save old buf and redirect std::cin to casos.txt
+//#endif 
 
 
 	int numCasos;
@@ -47,9 +55,9 @@ int main() {
 
 
 	// Para restablecer entrada. Comentar para acepta el reto
-#ifndef DOMJUDGE // para dejar todo como estaba al principio
-	std::cin.rdbuf(cinbuf);
-	system("PAUSE");
-#endif
+//#ifndef DOMJUDGE // para dejar todo como estaba al principio
+//	std::cin.rdbuf(cinbuf);
+//	system("PAUSE");
+//#endif
 	return 0;
 }
