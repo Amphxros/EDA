@@ -9,30 +9,25 @@
 #include<math.h>
 
 // función que resuelve el problema
-bool resolver(std::vector<int> datos, int k,int ini, int fin) {
-
-	if ( fin - ini == 1) {
-		return ((datos[fin] - datos[ini] >= k) || (datos[ini] - datos[fin]>=k));
-	}
-	else {
-		if (datos[fin] - datos[ini] >= k) {
-			int mit = (ini + fin) / 2;
-			//std::cout << datos[mit] << " ";
-			return resolver(datos, k, mit + 1, fin)&& resolver(datos, k, ini, mit);
-		}
-		return false;
-	}
+bool resolver(std::vector<int> datos, int k,int ini, int fin, int it) {
+	return false;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
-void resuelveCaso() {
-	// leer los datos de la entrada
 
+// Resuelve un caso de prueba, leyendo de la entrada la
+// configuración, y escribiendo la respuesta
+bool resuelveCaso() {
+	// leer los datos de la entrada
 	int n, k;
 	std::cin >> n;
 	std::cin >> k;
-	
+
+	if (!std::cin)
+		return false;
+
+
 	std::vector<int> datos(n);
 	for (int i = 0; i < n; i++) {
 		int j;
@@ -41,12 +36,19 @@ void resuelveCaso() {
 	}
 	// escribir sol
 
-	if (resolver(datos, k, 0, n)) {
+	if (resolver(datos, k, 0, n,0)) {
 		std::cout << "SI" << "\n";
 	}
 	else {
 		std::cout << "NO" << "\n";
 	}
+	return true;
+
+	// escribir sol
+
+
+	return true;
+
 }
 
 int main() {
@@ -56,11 +58,10 @@ int main() {
 //	std::ifstream in("datos.txt");
 //	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
 //#endif 
-//
-	int numCasos;
-	std::cin >> numCasos;
-	for (int i = 0; i < numCasos; ++i)
-		resuelveCaso();
+
+
+	while (resuelveCaso())
+		;
 
 
 	// Para restablecer entrada. Comentar para acepta el reto
