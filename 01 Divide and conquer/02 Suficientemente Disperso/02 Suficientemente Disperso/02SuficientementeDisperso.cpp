@@ -9,8 +9,8 @@
 
 // función que resuelve el problema
 bool suficientementeDisperso(const std::vector<int> & v,int k, int ini, int fin) {
-    if (fin - ini <= 1) {
-        return v[fin] - v[ini] >= k;
+    if (fin - ini == 1) {
+        return std::abs(v[fin] - v[ini]) >= k;
     }
     else{
         int mit = (ini + fin) / 2;
@@ -18,8 +18,7 @@ bool suficientementeDisperso(const std::vector<int> & v,int k, int ini, int fin)
         bool mitIzq = suficientementeDisperso(v, k, ini, mit);
         bool mitDer = suficientementeDisperso(v, k, mit+1, fin);
 
-        return v[fin] - v[ini] >= k && mitIzq && mitDer;
-
+        return std::abs(v[fin] - v[ini]) >= k && mitIzq && mitDer;
     }
 
 }
@@ -30,9 +29,12 @@ bool resuelveCaso() {
     // leer los datos de la entrada
     int n = 0;
     std::cin >> n;
-    if (n < 0) {
+    
+    
+    if (n <= 0) {
         return false;
     }
+  
     else {
         int k;
         std::cin >> k;
@@ -42,7 +44,11 @@ bool resuelveCaso() {
         for (int i = 0; i < n; i++) {
             std::cin >> v[i];
         }
-        if (suficientementeDisperso(v,k,0,n)) {
+        if (n == 1) {
+            std::cout << "SI" << "\n";
+        }
+
+        else if (suficientementeDisperso(v,k,0,n-1)) {
             std::cout << "SI" << "\n";
         }
         else {
@@ -59,10 +65,10 @@ bool resuelveCaso() {
 int main() {
     // Para la entrada por fichero.
     // Comentar para acepta el reto
-#ifndef DOMJUDGE
-    std::ifstream in("datos.txt");
-    auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-#endif 
+//#ifndef DOMJUDGE
+//    std::ifstream in("datos.txt");
+//    auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
+//#endif 
 
 
     while (resuelveCaso())
@@ -70,10 +76,10 @@ int main() {
 
 
     // Para restablecer entrada. Comentar para acepta el reto
-#ifndef DOMJUDGE // para dejar todo como estaba al principio
-    std::cin.rdbuf(cinbuf);
-    system("PAUSE");
-#endif
+//#ifndef DOMJUDGE // para dejar todo como estaba al principio
+//    std::cin.rdbuf(cinbuf);
+//    system("PAUSE");
+//#endif
 
     return 0;
 }
