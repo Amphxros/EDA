@@ -1,0 +1,4 @@
+﻿  06 Curva Concava.cpp
+C:\Users\ampac\source\repos\06 Curva Concava\06 Curva Concava\06 Curva Concava.cpp(26): warning C4715: 'perfilCurvaConcava': no todas las rutas de acceso de control devuelven un valor
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1074,5): error MSB6006: "link.exe" salió con el código 1168.
+LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\source\repos\06 Curva Concava\Debug\06 Curva Concava.exe para escritura
