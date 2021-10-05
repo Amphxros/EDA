@@ -1,0 +1,3 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : Acceso denegado a la ruta de acceso 'c:\users\ampac\documents\git_repositorios\ucm_repos\eda\01 divide and conquer\09 elemento no repetido\debug\09 elemento no repetido.exe'.
+  09ElementoNoRepetido.cpp
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\01 Divide and conquer\09 Elemento No Repetido\Debug\09 Elemento No Repetido.exe'
