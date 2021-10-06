@@ -7,7 +7,8 @@
 #include <fstream>
 #include <vector>
 
-// función que resuelve el problema
+// parte por la mitad y comprueba que en su segmento v[fin] - v[ini] son dispersos asi como recursivamente sus mitades
+//coste O(n*log(n)) donde n= dimension del vector
 bool suficientementeDisperso(const std::vector<int> & v,int k, int ini, int fin) {
     if (fin - ini == 1) {
         return std::abs(v[fin] - v[ini]) >= k;
@@ -31,24 +32,20 @@ bool resuelveCaso() {
     std::cin >> n;
     
     
-    if (n <= 0) {
+    if (!std::cin || n<=0) {
         return false;
     }
   
     else {
         int k;
         std::cin >> k;
-
         std::vector<int> v(n);
 
         for (int i = 0; i < n; i++) {
             std::cin >> v[i];
         }
-        if (n == 1) {
-            std::cout << "SI" << "\n";
-        }
 
-        else if (suficientementeDisperso(v,k,0,n-1)) {
+        if (n == 1 || suficientementeDisperso(v, k, 0, n - 1)) { //1 elemento ya es disperso
             std::cout << "SI" << "\n";
         }
         else {

@@ -1,0 +1,6 @@
+﻿  01 VariacionesDeUnConjunto.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto.cpp(25,29): warning C4018: '>=': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto.cpp(55,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto.cpp(55,41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto\01 VariacionesDeUnConjunto.cpp(55,40): warning C4244: 'argumento': conversión de 'float' a 'const unsigned int'; posible pérdida de datos
+  01 VariacionesDeUnConjunto.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\01 VariacionesDeUnConjunto\Debug\01 VariacionesDeUnConjunto.exe
