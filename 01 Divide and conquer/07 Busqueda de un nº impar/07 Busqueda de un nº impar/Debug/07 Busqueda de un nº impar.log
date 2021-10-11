@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : Acceso denegado a la ruta de acceso 'c:\users\ampac\documents\git_repositorios\ucm_repos\eda\01 divide and conquer\07 busqueda de un nº impar\debug\07 busqueda de un nº impar.exe'.
+  main.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\01 Divide and conquer\07 Busqueda de un nº impar\07 Busqueda de un nº impar\main.cpp(35): warning C4715: 'busca_impar': no todas las rutas de acceso de control devuelven un valor
+LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\01 Divide and conquer\07 Busqueda de un nº impar\Debug\07 Busqueda de un nº impar.exe'
