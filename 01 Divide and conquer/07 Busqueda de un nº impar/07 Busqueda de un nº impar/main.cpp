@@ -4,34 +4,34 @@
 #include <vector>
 #include <iomanip>
 #include<fstream>
-#define DOMJUDGE 
-int busca_impar(const std::vector<int>& v, int ini, int fin, int& impar) {
+//#define DOMJUDGE
+
+int busca_impar(const std::vector<int>& v, int ini, int fin) {
 	if (fin - ini == 1) {
 		if (v[ini] % 2 != 0) {
-			impar = v[ini];
+			return v[ini];
 		}
-		return impar;
+		else {
+			return 0;
+		}
 	}
 	else {
 		int mit = (fin + ini) / 2;
 		if (v[mit] % 2 != 0) {
-			impar = v[mit];
+			return v[mit];
 		}
 		else {
-			int i= busca_impar(v, 0, mit, impar);
-			int d= busca_impar(v, 0, mit +1 , impar);
+			int d = busca_impar(v, 0, mit);
+			int i = busca_impar(v, mit, fin);
 
-			if (i != 0)
-				return i;
-			else if (d != 0)
+			if (d != 0)
 				return d;
-			else
-				return 0;
-			
+			else {
+				return i;
+			}
 		}
 	}
-		
-	
+			
 }
 
 bool resuelveCaso() {
@@ -43,14 +43,13 @@ bool resuelveCaso() {
 	}
 	else {
 		std::vector<int> v(n);
-		int impar = 0;
 		for (int i = 0; i < n; i++) {
 			int c;
 			std::cin >> c;
 			v[i] = c;
 		}
 
-		std::cout << busca_impar(v, 0, n, impar) << "\n";
+		std::cout << busca_impar(v, 0, n) << "\n";
 		return true;
 	}
 }
