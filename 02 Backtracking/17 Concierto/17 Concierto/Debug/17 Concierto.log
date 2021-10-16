@@ -1,0 +1,10 @@
+﻿  concierto.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(31,9): error C2059: error de sintaxis: '}'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(32,5): error C2059: error de sintaxis: '}'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(27,38): warning C4244: 'argumento': conversión de 'double' a 'const int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(27,24): error C2064: el término no se evalúa como una función con 1 argumentos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(31,9): error C2143: error de sintaxis: falta ';' delante de '}'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(31,1): error C2429: función de idioma 'init-statements en if/switch' requiere la marca de compilador '/std:c++17'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(39,21): error C2601: 'resuelveCaso': las definiciones de funciones locales no son válidas
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(68,12): error C2601: 'main': las definiciones de funciones locales no son válidas
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\02 Backtracking\17 Concierto\17 Concierto\concierto.cpp(88,1): fatal error C1004: se encontró un final de archivo no esperado
