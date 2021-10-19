@@ -7,30 +7,30 @@
 //#define DOMJUDGE
 
 int busca_impar(const std::vector<int>& v, int ini, int fin) {
-	if (fin - ini == 1) {
-		if (v[ini] % 2 != 0) {
-			return v[ini];
-		}
-		else {
-			return 0;
-		}
+	int impar = 0;
+	if (fin - ini == 1) {	//asumimos que existe un nº impar
+		if (v[ini] % 2 != 0)
+			impar = v[ini];
+		else
+			impar = v[fin];
 	}
+
 	else {
 		int mit = (fin + ini) / 2;
-		if (v[mit] % 2 != 0) {
-			return v[mit];
-		}
+		if (v[mit] % 2 != 0)
+			impar = v[mit];
 		else {
-			int d = busca_impar(v, 0, mit);
-			int i = busca_impar(v, mit, fin);
+			int impIzq = busca_impar(v, ini, mit);
+			int impDer = busca_impar(v, mit,fin);
 
-			if (d != 0)
-				return d;
-			else {
-				return i;
-			}
+			if (impIzq % 2 != 0)
+				impar = impIzq;
+			else
+				impar = impDer;
+
 		}
 	}
+	return impar;
 			
 }
 
@@ -49,7 +49,7 @@ bool resuelveCaso() {
 			v[i] = c;
 		}
 
-		std::cout << busca_impar(v, 0, n) << "\n";
+		std::cout << busca_impar(v, 0, n-1) << "\n";
 		return true;
 	}
 }
