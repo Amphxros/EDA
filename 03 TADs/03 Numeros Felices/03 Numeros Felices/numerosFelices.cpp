@@ -1,46 +1,55 @@
 
+#include <math.h>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include <vector>
+#include <set>
 
-bool esFeliz(int n) {
+bool esFeliz(int n, std::set<int> set) {
 	
-	//sumamos cada cifra
+	//caso base
+	if (n == 1)
+		return true;
+	//caso recursivo
+	else {
 		int aux = n;
 		int k = 0;
-		while (aux >= 0) {
-			int m = std::powf(aux % 10,2);
+		//sumamos cada cifra en k
+		while (aux >= 0) { // partimos cada nº y lo elevamos al cuadrado
+			int m = (aux % 10)*(aux % 10);
 			k += m;
 			aux /= 10;
 			if (aux == 0)
 				aux = -1;
 		}
-	
-		std::cout << k << " ";
 
-		if (k <= 1) {
-			
-			return k==1;
+		auto it = set.find(k);
+		set.insert(k);
+		std::cout << k << " ";
+		if (it != set.end()) { // si es != -> existe otro nº k en el set -> no es un nº feliz ya que nunca llegará a 1
+			return false;
 		}
 		else {
-			return esFeliz(k);
+			if (k <= 1) {
+				return k == 1;
+			}
+			else {
+				return esFeliz(k, set);
+			}
 		}
-
-	
-
-		
-
-	
+	}
 }
 
 bool resuelveCaso() {
 	int n;
 	std::cin >> n;
-	if (n < 0)
+	if (!std::cin) {
 		return false;
+	}
 	else {
-		if (esFeliz(n)) {
+		std::set<int>s;
+		std::cout << n << " ";
+		if (esFeliz(n,s)) {
 			std::cout << 1<<"\n";
 		}
 		else {
@@ -48,7 +57,6 @@ bool resuelveCaso() {
 		}
 		return true;
 	}
-
 }
 
 
