@@ -1,0 +1,5 @@
+﻿  numerosFelices.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\03 Numeros Felices\03 Numeros Felices\numerosFelices.cpp(15,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\03 Numeros Felices\03 Numeros Felices\numerosFelices.cpp(15,10): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\03 Numeros Felices\03 Numeros Felices\numerosFelices.cpp(23,21): warning C4018: '<': no coinciden signed/unsigned
+  03 Numeros Felices.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\03 Numeros Felices\Debug\03 Numeros Felices.exe
