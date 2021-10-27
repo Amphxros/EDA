@@ -1,0 +1,3 @@
+﻿  evalua_polinomio.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\01 Evaluar Polinomio\01 Evaluar Polinomio\Polinomio.h(21,1): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+  01 Evaluar Polinomio.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\03 TADs\01 Evaluar Polinomio\Debug\01 Evaluar Polinomio.exe
