@@ -1,0 +1,3 @@
+﻿  duplicar_elem_cola.cpp
+LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\04 Duplicar elem de una cola\Debug\04 Duplicar elem de una cola.exe para escritura
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1074,5): error MSB6006: "link.exe" salió con el código 1168.
