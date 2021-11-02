@@ -1,7 +1,6 @@
 ﻿  ParentesisEquilibrados.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(10,11): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(18,20): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(20,15): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(24,15): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(31,11): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(13,11): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(22,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(26,10): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\ParentesisEquilibrados\ParentesisEquilibrados.cpp(29,15): warning C4018: '<': no coinciden signed/unsigned
   ParentesisEquilibrados.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\ParentesisEquilibrados\Debug\ParentesisEquilibrados.exe

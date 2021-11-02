@@ -1,10 +1,13 @@
+//AMPARO RUBIO BELLON
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <vector>
 #include <string>
+#include <stack>
 
-
+//coste O(n) donde n= v.size()
 int isCharEqual(const std::vector<char>& v, char c) {
 	int i = 0;
 	while (i < v.size() && v[i] != c)
@@ -12,31 +15,35 @@ int isCharEqual(const std::vector<char>& v, char c) {
 	return i;
 }
 
+//coste O(n) donde n= msg.size()
 bool estaEquilibrado(const std::vector<char>& ini, const std::vector<char>& fin, std::string msg) {
-	std::vector<int> chars = std::vector<int>(ini.size(), 0);
+	std::stack<char> mStack;
 
 	for (int i = 0; i < msg.size(); i++) {
-		int iniChar = isCharEqual(ini, msg[i]);
-		if (iniChar < ini.size()) {
-			chars[iniChar]++;
+		char c = msg[i];
+		int in = isCharEqual(ini, c);
+		int fi = isCharEqual(fin, c);
+		if (in < ini.size()) {
+			mStack.push(c);
 		}
-		int finChar = isCharEqual(fin, msg[i]);
-		if (finChar < fin.size() && chars[finChar]>0) {
-			chars[finChar]--;
+		else if (fi < fin.size()) { 
+			if (!mStack.empty() &&isCharEqual(ini, mStack.top()) == fi) // si los indices de la pila coinciden () [] {}
+			{
+				mStack.pop();
+			}
+			else {
+				return false;
+			}
 		}
-
 
 	}
-	int j = 0;
-	while (j < chars.size() && chars[j] == 0)
-		j++;
 
-	return j == chars.size();
+	return mStack.empty(); // si no quedan parentesis en la pila pues esta equilibrado
 
 }
 
 bool resuelveCaso() {
-	std::vector <char> ini = { '(', '[', '{'};
+	std::vector <char> ini = { '(', '[', '{'};	
 	std::vector <char> fin = { ')', ']', '}'};
 
 	std::string in;
