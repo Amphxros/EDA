@@ -45,18 +45,17 @@ bool estaEquilibrado(const std::vector<char>& ini, const std::vector<char>& fin,
 bool resuelveCaso() {
 	std::vector <char> ini = { '(', '[', '{'};	
 	std::vector <char> fin = { ')', ']', '}'};
-
 	std::string in;
 	std::getline(std::cin, in);
-	if (in=="") {
+	if (!std::cin)
 		return false;
-	}
+
 	else {
+
 		if (estaEquilibrado(ini, fin, in))
 			std::cout << "SI" << "\n";
 		else
 			std::cout << "NO" << "\n";
-
 		return true;
 	}
 }
