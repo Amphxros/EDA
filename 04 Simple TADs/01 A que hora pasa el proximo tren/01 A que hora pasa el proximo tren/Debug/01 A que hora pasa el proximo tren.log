@@ -1,0 +1,3 @@
+﻿  A_que_hora_pasa_el_proximo_tren.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1074,5): error MSB6006: "link.exe" salió con el código 1168.
+LINK : fatal error LNK1168: no se puede abrir C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\EDA\04 Simple TADs\01 A que hora pasa el proximo tren\Debug\01 A que hora pasa el proximo tren.exe para escritura
