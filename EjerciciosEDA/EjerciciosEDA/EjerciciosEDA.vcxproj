@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\01\02 Valles y Picos\02_Valles_y_picos.cpp" />
+    <ClCompile Include="..\..\22-23\02 Divide and conquer\01 Digitos complementarios\01_dig_compl.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
