@@ -13,7 +13,7 @@ void result() {
 	int inv=0;
 	std::vector<int> v;
 	int aux = num;
-	//partimos el nº coste O(m) donde m= nº de cifras que tiene num
+	
 	while (aux >= 0) {
 		v.push_back(aux % 10);
 		aux /= 10;
@@ -26,7 +26,7 @@ void result() {
 	int n = v.size()-1;
 	inv = 9 - v[0];
 	comp = 9-v[n];
-	//lo pasamos del vector al comp -> coste= O(m) donde m= nº de cifras que tiene num
+	//lo pasamos del vector al comp -> coste= O(m) donde m= nï¿½ de cifras que tiene num
 	for (int i = 1; i < n+1; i++) {
 		comp *= 10;
 		inv *= 10;

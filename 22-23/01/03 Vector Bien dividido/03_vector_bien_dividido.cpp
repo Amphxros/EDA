@@ -51,7 +51,6 @@ int main() {
     auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
 #endif 
 
-
     int numCasos;
     std::cin >> numCasos;
     for (int i = 0; i < numCasos; ++i)
