@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\01\04 Anagramas\04_Anagramas.cpp" />
+    <ClCompile Include="..\..\22-23\02 Divide and conquer\04 Nº Caucasicos\04_n_caucasicos.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

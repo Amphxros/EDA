@@ -17,7 +17,7 @@ bool resolver(const std::vector<int>& v, int p) {
     for (int i = p+1; i < v.size(); i++) {
         k+= v[i];
     }
-    std::cout << j << " " << k;
+    //std::cout << j << " " << k;
     return k < j;
 }
 

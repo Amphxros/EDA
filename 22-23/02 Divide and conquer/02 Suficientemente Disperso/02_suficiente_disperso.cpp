@@ -5,21 +5,21 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <math.h>
 
 #include <vector>
 
-// función que resuelve el problema
+// O(n*log(n))
 bool resolver(const std::vector<int>& v, int k, int ini, int fin) {
-    if(fin-ini==1){
-        return std::abs(v[fin] - v[ini])>=k;
+    if(fin-ini==0) {
+        return true;
+    }
+    else if(abs(v[ini] - v[fin]) < k){
+        return false;
     }
     else{
-        int mit= (fin + ini)/2;
-
-        bool iz= resolver(v,k,ini,mit);
-        bool de= resolver(v,k,mit+1,fin);
-
-        return std::abs(v[fin] - v[ini])>=k && iz && de;
+        int mit= (ini + fin) /2;
+        return resolver(v,k,ini,mit) && resolver(v,k,mit + 1, fin);
     }
     
 }
@@ -47,9 +47,6 @@ bool resuelveCaso() {
     else{
          std::cout << "NO" << "\n";
     }
-
-
-    
     
     return true;
     
@@ -75,4 +72,5 @@ int main() {
 #endif
 
     return 0;
+
 }
