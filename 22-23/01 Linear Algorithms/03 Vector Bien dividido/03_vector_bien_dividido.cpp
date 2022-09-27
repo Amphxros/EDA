@@ -18,7 +18,7 @@ bool resolver(const std::vector<int>& v, int p) {
         k+= v[i];
     }
     //std::cout << j << " " << k;
-    return k < j;
+    return k =< j;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la

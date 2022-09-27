@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\02 Divide and conquer\07 Minimo del Vector\07_minimo_vector.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\22-23\input\2-04.in" />
     <None Include="..\..\22-23\input\2-05.in" />
     <None Include="..\..\22-23\input\2-06.in" />
     <None Include="..\..\22-23\input\2-07.in" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\22-23\02 Divide and conquer\03 Parcialmente Ordenado\03_parcialmente_ordenado.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

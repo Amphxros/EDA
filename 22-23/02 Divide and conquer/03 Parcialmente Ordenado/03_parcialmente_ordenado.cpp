@@ -44,7 +44,8 @@ void resuelveCaso() {
     std::vector<int> v;
 
     int n=-1;
-    while(n==0){
+
+    while(n!=0 && !std::cin){
         std::cin>>n;
         v.push_back(n);
     }
