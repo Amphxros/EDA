@@ -1,4 +1,6 @@
-﻿#include <iostream>
+//Amparo Rubio
+//VJ 54
+#include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <vector>
