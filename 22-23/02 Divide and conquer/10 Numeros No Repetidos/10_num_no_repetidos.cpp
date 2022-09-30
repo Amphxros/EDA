@@ -1,37 +1,43 @@
-// Amparo rubio
-// Vj54
+// Amparo Rubio Bellon
+// VJ54
 
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <vector>
-
-// función que resuelve el problema
-void resolver(const std::vector<int>& v,int h ) {
-    int ini=0; int fin=0;
-    int i=0;
-    while(i<v.size() && ini!=0){
-        if(v[i]<h && ini==0)
-            ini=v[h];
-        i++;
+// O(n/2)
+int resolver(const std::vector<int>& v,int ini,int fin) {
+    //caso base
+    if(fin-ini<=1){
+        return ini;
     }
-    
+
+    //caso recursivo
+
+    int l= v[ini+1]-v[ini];
+    if (l != 0) {
+        return ini;
+    }
+  
+    return resolver(v,ini+2,fin);
+
 }
 
+#define DOMJUDGE
 // Resuelve un caso de prueba, leyendo de la entrada la
-// configuración, y escri>biendo la respuesta
+// configuración, y escribiendo la respuesta
 void resuelveCaso() {
     // leer los datos de la entrada
-    int n,h;
+    int n;
     std::cin>>n;
-    std::cin>>h;
 
-    std::vector<int> v(n);
-    for(int i=0;i<n;i++){
+    std::vector<int>v(n);
+    for(int i=0;i<n;i++)
         std::cin>>v[i];
-    }
+    
     // escribir sol
+    std::cout<<resolver(v,0,n-1)<<"\n";
     
     
 }

@@ -34,6 +34,7 @@ bool resolver(const std::vector<int> & v, int ini, int fin, int& min, int& max) 
 
         return max_der>=max_izq && min_izq<=min_der;
 
+
     }
 }
 
