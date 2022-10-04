@@ -21,7 +21,7 @@
     <None Include="..\..\22-23\input\2-07.in" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\02 Divide and conquer\10 Numeros No Repetidos\10_num_no_repetidos.cpp">
+    <ClCompile Include="..\..\22-23\04 Linear TADs\01_Hora_DelTren\01_HoraTren.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
