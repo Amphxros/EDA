@@ -7,45 +7,36 @@
 #include <fstream>
 #include <vector>
 
-// O(log n)
-int resolver(const std::vector<int>& v, const std::vector<int>& w, int ini, int fin) {
-  if(fin-ini==0){ //caso base 
-    return v[ini];
-  }
-
-  int mit=(ini +fin)/2;
-
-  if(v[mit]==w[mit]){
-      return resolver(v,w,mit+1,fin); //seguimos buscando por la derecha
-  }
-  else{
-      return resolver(v,w,ini,mit);
-  }
+// O(log*n)
+int resolver(const std::vector<int>&v,int ini, int fin) {
+    if(fin - ini==0){ //caso base
+        return v[ini];
+    }
+    
+   int mit=(ini +fin)/2;
+   if(v[mit]==v[ini] +(mit-ini)){ //si v[mit] forma parte de la sucesion
+    return resolver(v,mit,fin);
+   }
+   else{
+        return resolver(v,0,mit);
+   }
     
 }
 
-#define DOMJUDGE
-// Resuelve un caso de prueba, leyendo de la entrada la
-// configuración, y escribiendo la respuesta
+
 void resuelveCaso() {
     // leer los datos de la entrada
     int n;
     std::cin>>n;
-
     std::vector<int>v(n);
-    std::vector<int>w(n-1);
     
     for(int i=0;i<n;i++)
         std::cin>>v[i];
-
-    for(int i=0;i<n-1;i++)
-        std::cin>>w[i];
-
+    
     // escribir sol
-    std::cout << resolver(v, w, 0, n - 1)<<"\n";
+    std::cout<<resolver(v,0,n-1)<<"\n";
     
 }
-
 int main() {
     // Para la entrada por fichero.
     // Comentar para acepta el reto

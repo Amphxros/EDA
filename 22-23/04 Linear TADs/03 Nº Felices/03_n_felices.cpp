@@ -5,44 +5,29 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include <vector>
 
-// O(log n)
-int resolver(const std::vector<int>& v, const std::vector<int>& w, int ini, int fin) {
-  if(fin-ini==0){ //caso base 
-    return v[ini];
-  }
 
-  int mit=(ini +fin)/2;
 
-  if(v[mit]==w[mit]){
-      return resolver(v,w,mit+1,fin); //seguimos buscando por la derecha
-  }
-  else{
-      return resolver(v,w,ini,mit);
-  }
+// función que resuelve el problema
+int resolver() {
+    
     
 }
 
-#define DOMJUDGE
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
-void resuelveCaso() {
+bool resuelveCaso() {
     // leer los datos de la entrada
-    int n;
-    std::cin>>n;
-
-    std::vector<int>v(n);
-    std::vector<int>w(n-1);
     
-    for(int i=0;i<n;i++)
-        std::cin>>v[i];
-
-    for(int i=0;i<n-1;i++)
-        std::cin>>w[i];
-
+    if (! std::cin)
+        return false;
+    
+    int sol = resolver();
+    
     // escribir sol
-    std::cout << resolver(v, w, 0, n - 1)<<"\n";
+    
+    
+    return true;
     
 }
 
@@ -55,10 +40,8 @@ int main() {
      #endif 
     
     
-    int numCasos;
-    std::cin >> numCasos;
-    for (int i = 0; i < numCasos; ++i)
-        resuelveCaso();
+    while (resuelveCaso())
+        ;
 
     
     // Para restablecer entrada. Comentar para acepta el reto
