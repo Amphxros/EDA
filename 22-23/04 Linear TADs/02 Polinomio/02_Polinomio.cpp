@@ -7,34 +7,13 @@
 #include <fstream>
 #include <vector>
 #include <math.h>
-
-class Polinomio{
-    public:
-        struct Monomio{
-            int base;
-            int exp;
-            Monomio(int b, int e): base(b), exp(e){}
-        };
-
-        Polinomio(){}
-        void add(int base,int exp){
-            v.push_back(Monomio(base,exp));
-        }
-
-        long int resolver(int val){
-            long int result=0;
-            for(int i=0;i<v.size();i++)
-                result+=v[i].base*std::pow(val,v[i].exp);
-            
-            return result;
-        }
-    private:
-        std::vector<Monomio> v;
-};
+#include "Polinomio.h"
 
 
-// O(n)
-long int resolver(Polinomio p, int val) {
+
+
+// función que resuelve el problema
+int resolver(const Polinomio& p, int val) {
     
     return p.resolver(val);
 }
@@ -43,31 +22,36 @@ long int resolver(Polinomio p, int val) {
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    int base, exp;
-    std::cin>>base;
+    int base = 0;
+    int exp = 0;
+
+    std::cin >> base;
+
     if (! std::cin)
         return false;
-    std::cin>>exp;
-    Polinomio p;
-    while (base!=0 || exp!=0)
+    std::cin >> exp;
+
+    Polinomio p = Polinomio();
+    while (base!=0||exp!=0)
     {
-       p.add(base, exp);
+        p.add(base, exp);
+        std::cin >> base >> exp;
     }
+
     int n;
-    std::cin>>n;
-
-    // escribir sol
-    for(int i=0; i<n;i++){
+    std::cin >> n;
+    
+    for (int i = 0; i < n; i++) {
         int val;
-        std::cin>>val;
-        std::cout<< p.resolver(val)<<" ";
+        std::cin >> val;
+        // escribir sol
+        std::cout << resolver(p, val)<<" ";
     }
-    std::cout<<"\n";
-
+    std::cout << "\n";
     return true;
     
 }
-
+#define DOMJUDGE
 int main() {
     // Para la entrada por fichero.
     // Comentar para acepta el reto

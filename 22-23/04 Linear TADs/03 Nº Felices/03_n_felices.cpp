@@ -5,12 +5,12 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-
+#include "Set.h"
 
 
 // función que resuelve el problema
 int resolver() {
-    
+
     
 }
 
@@ -18,11 +18,12 @@ int resolver() {
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    
+    int n;
+    std::cin>>n;
     if (! std::cin)
         return false;
     
-    int sol = resolver();
+   
     
     // escribir sol
     
