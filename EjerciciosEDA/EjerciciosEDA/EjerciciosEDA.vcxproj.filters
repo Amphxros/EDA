@@ -21,8 +21,13 @@
     <None Include="..\..\22-23\input\2-07.in" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\04 Linear TADs\01_Hora_DelTren\01_HoraTren.cpp">
+    <ClCompile Include="..\..\22-23\04 Linear TADs\06 K menores\06_K_Menores.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\22-23\04 Linear TADs\06 K menores\Set.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EjerciciosEDA", "EjerciciosEDA\EjerciciosEDA.vcxproj", "{FF642827-22EC-4322-AA33-582B893DAA2A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{645CEF4E-D399-4D29-9CBA-C86CCC732603}"
-	ProjectSection(SolutionItems) = preProject
-		..\22-23\04 Linear TADs\01_Hora_DelTren\01_HoraTren.cpp = ..\22-23\04 Linear TADs\01_Hora_DelTren\01_HoraTren.cpp
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

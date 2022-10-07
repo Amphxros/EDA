@@ -1,53 +1,51 @@
-// Amparo Rubio Bellon
+// Amparo Rubio
 // VJ54
 
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include "Set.h"
 #include <vector>
-#include <math.h>
-#include "Polinomio.h"
-
-
-
-
-// función que resuelve el problema
-int resolver(const Polinomio& p, int val) {
+#define DOMJUDGE
+// O(k) donde k son los k elems
+std::vector<int> resolver(Set<int> s, int k) {
     
-    return p.resolver(val);
+     std::vector<int> v(k);
+    for(int i=0; i<k;i++){
+        int n = s.getMin();
+        v[i] = n;
+        std::cout << n << " ";
+        s.removeMin();
+    }
+    std::cout << "\n";
+    
+    return v;
+
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    int base = 0;
-    int exp = 0;
+    int k;
+    std::cin>>k;
 
-    std::cin >> base;
-
-    if (! std::cin)
+    if (!std::cin || k<=0)
         return false;
-    std::cin >> exp;
-
-    Polinomio p = Polinomio();
-    while (base!=0||exp!=0)
-    {
-        p.add(base, exp);
-        std::cin >> base >> exp;
-    }
-
-    int n;
-    std::cin >> n;
+    Set<int> s= Set<int>();
     
-    for (int i = 0; i < n; i++) {
-        int val;
-        std::cin >> val;
-        // escribir sol
-        std::cout << resolver(p, val)<<" ";
+    int n=0;
+    std::cin>>n;
+    s.add(n);
+    while(n!=-1){
+        std::cin>>n;
+        s.add(n);
     }
-    std::cout << "\n";
+    s.remove(-1);
+    resolver(s, k);
+    // escribir sol
+    
     return true;
     
 }

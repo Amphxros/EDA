@@ -4,7 +4,7 @@
 #define SET_H
 
 #include <utility>    // std::move
-
+#include<iostream>
 template <class T>
 class Set {
 protected:
@@ -87,6 +87,25 @@ public:
     // Devuelve el puntero del array para poder consultar desde fuera su contenido (por ej. para imprimirlo)
     const T* toArray() const{
         return array;
+    }
+    T getMin(){
+        return array[0];
+    }
+    T getMax(){
+        return array[nelems-1];
+    }
+    void removeMin() {
+        shiftLeftFrom(0);
+        nelems--;
+    }
+
+    void removeMax(){
+        shiftRightFrom(0);
+    }
+    void print(){ //just for debugging
+        for(int i=0;i<nelems;i++){
+            std::cout<< array[i]<<" ";
+        }
     }
 
 
