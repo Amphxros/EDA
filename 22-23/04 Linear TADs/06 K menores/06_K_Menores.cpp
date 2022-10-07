@@ -7,6 +7,8 @@
 #include <fstream>
 #include "Set.h"
 #include <vector>
+#include <algorithm>
+
 #define DOMJUDGE
 // O(k) donde k son los k elems
 std::vector<int> resolver(Set<int> s, int k) {
@@ -34,15 +36,27 @@ bool resuelveCaso() {
     if (!std::cin || k<=0)
         return false;
     Set<int> s= Set<int>();
-    
-    int n=0;
+    std::vector<int> aux;
+    int n = 0;
+    int dim = 0;
     std::cin>>n;
-    s.add(n);
+    aux.push_back(n);
     while(n!=-1){
         std::cin>>n;
-        s.add(n);
+        aux.push_back(n);
+        dim++;
     }
-    s.remove(-1);
+    n = 0;
+    std::sort(aux.begin(), aux.end());
+
+    //metemos sin repeticiones
+    for (int i = 1; i < dim; i++) { // 1 porque el primero el -1
+       
+        if (s.empty()|| !s.contains(aux[i])) {
+            s.add(aux[i]);
+        }
+    }
+    
     resolver(s, k);
     // escribir sol
     
