@@ -47,12 +47,12 @@ bool resuelveCaso() {
         dim++;
     }
     n = 0;
-    std::sort(aux.begin(), aux.end());
+    std::sort(aux.begin(), aux.end()); //ordenamos 
 
     //metemos sin repeticiones
     for (int i = 1; i < dim; i++) { // 1 porque el primero el -1
        
-        if (s.empty()|| !s.contains(aux[i])) {
+        if (s.empty()|| s.getMax()!=aux[i]) { //como aux está ordenado podemos comprobar si algo es distinto mirando el maximo del set
             s.add(aux[i]);
         }
     }
