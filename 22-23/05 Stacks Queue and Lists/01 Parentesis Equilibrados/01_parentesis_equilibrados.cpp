@@ -1,3 +1,6 @@
+//Amparo Rubio Bellon
+//VJ54
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
