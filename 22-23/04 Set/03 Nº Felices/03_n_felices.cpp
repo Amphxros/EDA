@@ -18,7 +18,7 @@ bool resolver(std::set<int> s, int n) {
         int aux, result = 0;
         while (n != 0) {
             aux = n % 10;
-            result += std::pow(aux, 2);
+            result += aux*aux;
             n /= 10;
         }
         n = result;
