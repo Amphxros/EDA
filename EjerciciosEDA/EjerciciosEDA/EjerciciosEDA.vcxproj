@@ -25,10 +25,10 @@
     <None Include="..\..\22-23\input\2-07.in" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\05 Stacks Queue and Lists\06 Duplicar Cola\06_duplica.cpp" />
+    <ClCompile Include="..\..\22-23\05 Stacks Queue and Lists\03 Invertir Cola\03_invertir_cola.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\22-23\05 Stacks Queue and Lists\06 Duplicar Cola\queue.h" />
+    <ClInclude Include="..\..\22-23\05 Stacks Queue and Lists\03 Invertir Cola\queue.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
