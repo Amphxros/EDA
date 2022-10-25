@@ -8,32 +8,59 @@
 #include<vector>
 #include "queue.h" 
 
-// función que resuelve el problema
+// O(4*n)
 void resolver(queue<int> v, queue<int> w, int col) {
-    queue<int> result;
-    queue<int> aux=v;
+    if (!v.empty() && !w.empty()) {
+        queue<int> result;
+        queue<int> aux = v;
 
-    //imprimimos la cola original O(n)
-    while(!aux.empty()){
-        std::cout<< aux.front()<< " ";
-        aux.pop();
-    }
-
-    while (!v.empty() && col!=v.front())
-    {
-        result.push(v.front());
+        //imprimimos la cola original O(n)
+        while (!aux.empty()) {
+            std::cout << aux.front() << " ";
+            aux.pop();
+        }
+        std::cout << "\n";
+        //O(n-col)
+        while (v.front() != col) {
+            int a = v.front();
+            v.pop();
+            aux.push(a);
+        }
+        //O(n)
+        aux.push(v.front());
         v.pop();
+
+        //O(col)
+        while (!w.empty()) {
+            aux.push(w.front());
+            w.pop();
+        }
+
+        //O(n)
+        while (!v.empty())
+        {
+            aux.push(v.front());
+            v.pop();
+        }
+
+
+        while (!aux.empty())
+        {
+            std::cout << aux.front() << " ";
+            aux.pop();
+        }
+
+        std::cout << "\n";
+
     }
-    
 
     
 }
-
+#define DOMJUDGE
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 void resuelveCaso() {
-    // leer los datos de la entrada
-    
+    // leer los datos de la entrada 
     queue<int>v;
     queue<int>w;
     int aux;
@@ -59,7 +86,7 @@ void resuelveCaso() {
         
     }
 
-    
+    resolver(v, w, col);
    
     // escribir sol
     
