@@ -1,3 +1,4 @@
+
 //
 //  list_eda.h
 //
@@ -14,11 +15,8 @@
 #ifndef list_eda_h
 #define list_eda_h
 
-#include <stdexcept>
-#include <cassert>
-
 #include "deque.h"
-#include<iostream>
+#include <iostream>
 
 template <class T>
 class list : public deque<T> {
@@ -66,6 +64,8 @@ protected:
       bool operator!=(Iterador const& that) const {
          return !(*this == that);
       }
+
+     
       
    private:
       // para que list pueda construir objetos del tipo iterador
@@ -96,7 +96,34 @@ public:
    const_iterator end() const {
       return cend();
    }
-   
+    void orden() {
+         if (!this->empty()) {
+           auto it = begin();
+           auto it_sig = begin();
+           it_sig++; //sumamos para que vaya delante
+
+           while (it_sig != end())
+           {
+               if (*it_sig >= *it) {
+                   it++;
+                   it_sig++;
+               }
+
+               else {
+                   erase(it_sig);
+                   it_sig = it;
+                   it_sig++;
+               }
+            }
+         }
+      }
+
+   void print() {
+       for (auto it = begin(); it != end(); ++it) {
+           std::cout << *it << " ";
+       }
+       std::cout << "\n";
+   }
    /*
     Iteradores que permiten recorrer la lista y cambiar sus elementos.
     */
@@ -130,36 +157,6 @@ public:
       iterator next(it.act->sig, this->fantasma);
       this->borra_elem(it.act);
       return next;
-   }
-   void orden() {
-
-       if (!this->empty()) {
-           auto it = begin();
-           auto it_sig = begin();
-           it_sig++; //sumamos para que vaya delante
-
-           while (it_sig != end())
-           {
-               if (*it_sig > *it) {
-                   it++;
-                   it_sig++;
-               }
-
-               else {
-                   erase(it_sig);
-                   it_sig = it;
-                   it_sig++;
-               }
-
-           }
-       }
-   }
-
-   void print() {
-       for (auto it = begin(); it != end(); ++it) {
-           std::cout << *it << " ";
-       }
-       std::cout << "\n";
    }
 };
 
