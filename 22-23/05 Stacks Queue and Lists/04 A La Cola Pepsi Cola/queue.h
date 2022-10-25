@@ -15,7 +15,7 @@
 #define queue_eda_h
 
 #include <stdexcept>  // std::domain_error
-
+#include<iostream>
 template <class T>
 class queue {
 protected:
@@ -62,6 +62,42 @@ public:
       }
       return *this;
    }
+
+   void cola(int pri, queue<T>& col) {
+       if (!col.empty()) {
+           Nodo* act = this->prim;
+           while (act != nullptr && act->elem != pri)
+           {
+               act = act->sig;
+           }
+
+           if (act != nullptr) {
+               if (act == this->ult) this->ult = col.ult;
+
+               Nodo* aux = act->sig;
+               act->sig = col.prim;
+               col.ult->sig = aux;
+               this->nelems += col.nelems;
+           }
+
+           col.prim = nullptr;
+           col.ult = nullptr;
+           col.nelems = 0;
+
+       }
+   }
+
+   void print() {
+       Nodo* aux = prim;
+       for (int i = 0; i < this->nelems; i++) {
+           std::cout << aux->elem << " ";
+           aux = aux->sig;
+       }
+
+       std::cout << "\n";
+
+   }
+
    
    // añadir un elemento al final de la cola
    void push(T const& elem) {
@@ -133,6 +169,8 @@ protected:
          nelems = other.nelems;
       }
    }
+
+
 };
 
 #endif // queue_eda_h
