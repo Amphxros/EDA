@@ -6,49 +6,33 @@
 #include <iomanip>
 #include <fstream>
 #include "list.h"
-#include <algorithm>
 
 template <class T>
 class list_plus: public list<T>{
 public:
     void adelanta(int tam,int pos, int lon,int k){
-        if (!this->empty() && lon!=0 &&k!=0) {
-            auto itA = this->begin();
-            auto itB = this->begin();
-            if (pos + lon > tam) {
-                //sgmentos n-pos
-                for (int i = 0; i < tam - pos; i++) {
-                    itA++;
-                    itB++;
-                }
-                for (int i = 0; i < k; i++)
-                    itB++;
+     auto ini = l.begin(), end = l.end();
+    
+    for (int i = 0; i < pos - 1; i++)
+        ini++;
 
-            }
-            else {
-                for (int i = 0; i < pos; i++) {
-                    itA++;
-                    itB++;
-                }
-                for (int i = 0; i < k; i++)
-                    itB++;
-            }
+    for (int j = l.size(); j > pos + lon - 2; j--)
+        end--;
 
-            for (int i = 0; i < lon; i++) {
-
-                auto aux = *itA;
-                *itA = *itB;
-                *itB = aux;
-                
-                itA++;
-                itB++;
-
-            }
+    if (ini != end) {
+        //O(n/2)
+        for (int i = lon / 2; i > 0; i--) {
+            swap(*ini, *end); //O(2)
+            ini++;
+            end--;
         }
+    }
+
+
     }
     
     void print(){
-        for(auto it= this->begin(); it!=this->end();++it){
+        for(auto it= begin(); it!=end();++it){
             std::cout<< *it<<" ";
         }
         std::cout << "\n";
@@ -71,8 +55,7 @@ void resuelveCaso() {
         list.push_back(c);
     }
 
-    list.adelanta(tam, pos, lon, k);
-    list.print();
+
     
     
     

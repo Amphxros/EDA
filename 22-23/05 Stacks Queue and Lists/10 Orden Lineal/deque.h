@@ -148,14 +148,7 @@ protected:
       return nuevo;
    }
    
-   // eliminar el nodo n
-   void borra_elem(Nodo * n) {
-      assert(n != nullptr);
-      n->ant->sig = n->sig;
-      n->sig->ant = n->ant;
-      delete n;
-      --nelems;
-   }
+  
 };
 
 #endif // deque_eda_h

@@ -34,6 +34,7 @@ void invertirSegmento(list<int>& l, int pos, int lon){
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
+
     // leer los datos de la entrada
     int n, pos, longitud, elem;
     list<int> l;

@@ -3,21 +3,35 @@
 #include <iomanip>
 #include <fstream>
 #include "bintree_eda.h"
+#include <algorithm> 
 using namespace std;
 
 template <class T>
 int nodos(bintree<T> const& tree){
-    
+    return 0;
 }
-
+#define DOMJUDGE
 template <class T>
 int hojas(bintree<T> const& tree){
-    
+    if (tree.empty()) {
+        return 1;
+    }
+    else {
+        return hojas(tree.left()) - hojas(tree.right());
+    }
 }
 
 template <class T>
 int altura(bintree<T> const& tree){
-    
+    if (tree.empty()) {
+        return 0;
+    }
+    else {
+        int l = altura(tree.left());
+        int r = altura(tree.right());
+
+        return std::max<int>(l, r) + 1;
+    }
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
