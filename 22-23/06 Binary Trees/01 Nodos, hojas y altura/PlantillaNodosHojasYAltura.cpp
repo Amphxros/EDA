@@ -8,29 +8,41 @@ using namespace std;
 
 template <class T>
 int nodos(bintree<T> const& tree){
-    return 0;
+    return 0;   
 }
 #define DOMJUDGE
 template <class T>
 int hojas(bintree<T> const& tree){
     if (tree.empty()) {
-        return 1;
+        return 0;
     }
     else {
-        return hojas(tree.left()) - hojas(tree.right());
+        if (tree.left().empty() && tree.right().empty()) {
+            return 1;
+        }
+        else {
+            return hojas(tree.left()) + hojas(tree.right());
+        }
     }
 }
 
 template <class T>
-int altura(bintree<T> const& tree){
+int altura(bintree<T> const& tree, int h){
     if (tree.empty()) {
-        return 0;
+        return h;
     }
     else {
-        int l = altura(tree.left());
-        int r = altura(tree.right());
-
-        return std::max<int>(l, r) + 1;
+        h++;
+        int auxl = 0;
+        int auxr = 0;
+        if (altura(tree.left(), h) > altura(tree.right(), h)) {
+            h = altura(tree.left(), h);
+        }
+        else {
+            h = altura(tree.right(), h);
+        }
+        
+        return h;
     }
 }
 
@@ -41,7 +53,7 @@ void resuelveCaso() {
     int n;
     bintree<char> tree;
     tree = leerArbol('.');
-    cout << nodos(tree) << " " << hojas(tree) << " " << altura(tree) << endl;
+    cout << nodos(tree) << " " << hojas(tree) << " " << altura(tree,0) << endl;
 }
 
 
