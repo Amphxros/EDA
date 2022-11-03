@@ -25,10 +25,10 @@
     <None Include="..\..\22-23\input\2-07.in" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\22-23\06 Binary Trees\01 Nodos, hojas y altura\bintree_eda.h" />
+    <ClCompile Include="..\..\22-23\06 Binary Trees\02 Frontera\02_frontera.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\06 Binary Trees\01 Nodos, hojas y altura\PlantillaNodosHojasYAltura.cpp" />
+    <ClInclude Include="..\..\22-23\06 Binary Trees\02 Frontera\bintree_eda.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

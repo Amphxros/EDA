@@ -8,7 +8,13 @@ using namespace std;
 
 template <class T>
 int nodos(bintree<T> const& tree){
-    return 0;   
+    if (tree.empty()) {
+        return 0;
+    }
+    else {
+        int n = !tree.left().empty() + !tree.right().empty();
+        return n + nodos(tree.left()) + nodos(tree.right());
+    }
 }
 #define DOMJUDGE
 template <class T>
@@ -53,7 +59,7 @@ void resuelveCaso() {
     int n;
     bintree<char> tree;
     tree = leerArbol('.');
-    cout << nodos(tree) << " " << hojas(tree) << " " << altura(tree,0) << endl;
+    cout << nodos(tree) << " " << hojas(tree) << " " << altura(tree,0) << "\n";
 }
 
 
