@@ -13,7 +13,7 @@ template<typename T>
 void resolver(bintree<T> tree, T& min){
     if(tree.root() < min)
         min= tree.root();
-   
+
     if(!tree.left().empty())
         resolver(tree.left(),min);
     if(!tree.right().empty())

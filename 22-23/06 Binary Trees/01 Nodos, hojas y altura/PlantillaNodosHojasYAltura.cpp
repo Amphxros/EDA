@@ -1,4 +1,5 @@
-
+//Amparo Rubio Bellon
+//VJ54
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -8,13 +9,16 @@ using namespace std;
 
 template <class T>
 int nodos(bintree<T> const& tree){
-    if (tree.empty()) {
+
+    if (tree.empty())
+    {
         return 0;
     }
-    else {
-        int n = !tree.left().empty() + !tree.right().empty();
-        return n + nodos(tree.left()) + nodos(tree.right());
+    else
+    {
+        return nodos(tree.left()) + nodos(tree.right()) + 1;
     }
+    
 }
 #define DOMJUDGE
 template <class T>
