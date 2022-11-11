@@ -14,9 +14,11 @@ bool esBinario(bintree<T> const& tree) {
         return true;
     else {
         bool l = tree.left().empty() || tree.left().root() < tree.root();
-        bool r = tree.right().empty() || tree.right().root() > tree.root();
+        l &= tree.right().empty() || tree.right().root() > tree.root();
+        l &=esBinario(tree.left());
+        l &=esBinario(tree.right());
 
-        return l && r && esBinario(tree.left()) && esBinario(tree.right());
+        return l;
     }
 }
 
