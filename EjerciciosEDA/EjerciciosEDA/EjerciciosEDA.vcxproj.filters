@@ -7,11 +7,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\22-23\06 Binary Trees\09 Arboles Singulares\bintree_eda.h">
+    <ClInclude Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\Consultorio.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\Date.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\06 Binary Trees\09 Arboles Singulares\PlantillaSingulares.cpp" />
+    <ClCompile Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\MainConsultorioMedico.cpp" />
   </ItemGroup>
 </Project>
