@@ -1,13 +1,36 @@
 #pragma once
-
+#include <iostream>
 
 class Fecha
 {
 public:
-	Fecha(int d, int h, int m);
-	~Fecha();
+	Fecha(int d, int h, int m) :
+		dia(d), hora(h), min(m) {}
+	~Fecha() {}
 
-	void print() const;
+	void print() const {
+		if (hora == 0) {
+			std::cout << "00";
+		}
+		else if (hora < 10) {
+			std::cout << "0" << hora;
+		}
+		else {
+			std::cout << hora;
+		}
+
+		std::cout << ":";
+
+		if (min == 0) {
+			std::cout << "00";
+		}
+		else if (min < 10) {
+			std::cout << "0" << min;
+		}
+		else {
+			std::cout << min;
+		}
+	}
 	
 	int getDia() const { return dia; };
 	int getHora() const { return hora; };
