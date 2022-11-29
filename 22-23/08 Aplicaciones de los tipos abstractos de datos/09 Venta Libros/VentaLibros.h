@@ -1,27 +1,31 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <utility>
 #include <algorithm>
-#include<list>
-#include <map>
+#include <functional>
+
+#include <list>
+
+using namespace std;
+
 class VentaLibros
 {
 public:
-    VentaLibros()=default;
+    VentaLibros() {
+        libros = std::list < std::pair<std::string, int>>();
+    };
 
     // Añade un nuevo libro al sistema
     void nuevoLibro(std::string const& titulo, int unidades){
+        
         libros.push_back({ titulo,unidades });
     }
     
     // Compra un libro
     void comprar(std::string const& titulo){
         auto it = libros.begin();
-        if (it == libros.end()) {
-            return; //lista vacia
-        }
-
+       
         while (it != libros.end() && it->first != titulo)
         {
             ++it;
@@ -31,9 +35,7 @@ public:
         if (i == 0) {
             elimLibro(titulo);
         }
-        else {
-            it->second = i;
-        }
+      
 
 
     }
@@ -58,9 +60,6 @@ public:
     void elimLibro(std::string const& titulo){
         
         auto it = libros.begin();
-        if (it == libros.end()) {
-            return; //lista vacia
-        }
 
         while (it != libros.end() && it->first != titulo)
         {
@@ -70,7 +69,6 @@ public:
         if (it != libros.end()) {
             libros.erase(it);
         }
-
 
     }
 
@@ -90,14 +88,16 @@ public:
         return it->second;
     }
     
-    std::list<std::string> top10() const{
-        std::list<std::pair<std::string, int>> list = libros;
-        std::list<std::string> top = std::list<std::string>(10);
-
-        std::sort(list.begin(), list.end()); //REVISAR COMO ORDENAR TENIENDO EN CUENTA EL 2
+    //O(nlogn)
+    std::list<std::string> top10(){
         
+        std::list<std::string> top = std::list<std::string>();
+
+        //O (nlogn) al igual que el std::sort
+        libros.sort([](const auto& x, const auto& y) { return x.second > y.second; });
+
         int i = 0;
-        for (auto it = libros.end(); it != libros.begin() && i<10; it--) {
+        for (auto it = libros.begin(); it != libros.end() && i<10; ++it) {
             top.push_back(it->first);
             i++;
         }
