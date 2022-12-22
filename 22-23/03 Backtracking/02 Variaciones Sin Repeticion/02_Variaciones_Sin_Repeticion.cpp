@@ -5,23 +5,37 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <vector>
+#define DOMJUDGE
+
+bool esPosible(const int& k, std::vector<int>&sol,std::vector<bool>& marcados) {
+    return !marcados[sol[k]]; //si no esta marcado
+}
 
 bool esSolucion(const int& n, std::vector<int>sol) {
     return sol[n-1] != -1;
 }
 
 //O(m*n)
-void resolver(int k, const int&n, const int&m, std::vector<int>& sol) {
+void resolver(int k, const int&n, const int&m, std::vector<int>& sol, std::vector<bool>& marcados) {
     if(esSolucion(n,sol)){
         for(int k = 0; k<n; k++){
-            std::cout << (char)('a' + sol[k])<< " ";
+            std::cout << (char)('a' + sol[k]);
         }
         std::cout << "\n";
     }
     else{
         for(int i=0; i<m; i++){
             sol[k]=i; //marcamos
-            resolver(k+1,n,m,sol); //vamos al siguiente
+
+          //si no se esta repitiendo
+            if(esPosible(k,sol,marcados)){
+                marcados[i]=true;
+                resolver(k+1,n,m,sol,marcados); //vamos al siguiente
+                marcados[i]=false;
+            }
+
+
             sol[k]=-1; //desmarcamos
         }
     }
@@ -31,7 +45,8 @@ void resolver(const int& n, const int& m) {
      //n = tamaño de la combinacion
     //m = elementos disponibles
     std::vector<int> sol(n,-1);
-    
+    std::vector<bool> marcados(m,false);
+    resolver(0,n,m,sol,marcados);
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
