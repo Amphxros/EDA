@@ -5,45 +5,46 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include <string>
-#include "list_eda.h"
 
-#include "treemap_eda.h"
-
-typedef map<std::string, list<int>*> Diccionario;
-
-// función que resuelve el problema
-void resolver() {
-    
-    
+bool esSolucion(const int& n, std::vector<int>sol) {
+    return sol[n-1] != -1;
 }
 
-// Resuelve un caso de prueba, leyendo de la entrada la
+//O(m*n)
+void resolver(int k, const int&n, const int&m, std::vector<int>& sol) {
+    if(esSolucion(n,sol)){
+        for(int k = 0; k<n; k++){
+            std::cout << (char)('a' + sol[k])<< " ";
+        }
+        std::cout << "\n";
+    }
+    else{
+        for(int i=0; i<m; i++){
+            sol[k]=i; //marcamos
+            resolver(k+1,n,m,sol); //vamos al siguiente
+            sol[k]=-1; //desmarcamos
+        }
+    }
+}
+
+void resolver(const int& n, const int& m) {
+     //n = tamaño de la combinacion
+    //m = elementos disponibles
+    std::vector<int> sol(n,-1);
+    
+}
 
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    int n;
-    std::cin>>n;
-    if (! std::cin || n<=0)
+    
+    int n,m;
+    std::cin >> m >> n;
+    if (!std::cin)
         return false;
-
-    Diccionario dic;
-    std::string palabra;
-    std::getline(std::cin,palabra);
-
-    map<std::string, list<int>*>::iterator it= dic.begin();
-
-    while (it!=dic.end()){
-        std::cout<<it->first<<" ";
-        it++;
-    }
-    
-    
-    
-    // escribir sol
-    
+    resolver(n,m);
+    std::cout << "\n";
     
     return true;
     

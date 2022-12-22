@@ -31,7 +31,8 @@ void leerRepartos(int numPeliculas, RepartosPeliculas& peliculas){
 
 
 void procesarEmisiones(RepartosPeliculas const& repartos, vector<string> const& secEmisiones){
-    ...
+    int min=0;
+    
 }
 
 

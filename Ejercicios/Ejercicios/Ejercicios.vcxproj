@@ -18,18 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\Consultorio.h" />
-    <ClInclude Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\Date.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\22-23\08 Aplicaciones de los tipos abstractos de datos\02 Consultorio Medico\MainConsultorioMedico.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ff642827-22ec-4322-aa33-582b893daa2a}</ProjectGuid>
-    <RootNamespace>EjerciciosEDA</RootNamespace>
+    <ProjectGuid>{0850766d-4230-4bc9-a297-c07bc9e30043}</ProjectGuid>
+    <RootNamespace>Ejercicios</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -145,6 +138,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\22-23\03 Backtracking\01 Variaciones Con Repeticion\01_Variaciones_Con_Repeticion.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

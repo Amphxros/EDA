@@ -1,0 +1,6 @@
+*.vs
+*.ipch
+*.user
+*.log
+*.recipe
+Ejercicios/Ejercicios/Debug

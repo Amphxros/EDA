@@ -8,7 +8,7 @@
 #include <vector>
 #include "hashmap_eda.h"
 
-// función que resuelve el problema
+// O(n)
 int resolver(const std::vector<int>& caps) {
     unordered_map<int, int> mapa= unordered_map<int, int>(); //creamos el mapa
     
@@ -19,9 +19,9 @@ int resolver(const std::vector<int>& caps) {
         else {
             return i;
         }
-    }  
-   
-    return caps.size();
+    }
+
+      
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la

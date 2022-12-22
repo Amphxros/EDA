@@ -37,7 +37,7 @@ protected:
    
    /*
     Clase nodo que almacena internamente la pareja <clave, valor>
-    y punteros al hijo izquierdo y al hijo derecho.
+RepartosPeliculas    y punteros al hijo izquierdo y al hijo derecho.
     */
    struct TreeNode;
    using Link = TreeNode *;
