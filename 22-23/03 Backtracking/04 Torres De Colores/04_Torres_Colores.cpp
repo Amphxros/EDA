@@ -1,51 +1,49 @@
-// Amparo Rubio Bellon
-// VJ54
+// Nombre del alumno .....
+// Usuario del Juez ......
 
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <vector>
+#include <string>
 
 bool esSolucion(const int& n, std::vector<int>sol) {
     return sol[n-1] != -1;
 }
 
-//O(m*n)
-void resolver(int k, const int&n, const int&m, std::vector<int>& sol) {
+// función que resuelve el problema
+void resolver(int k,int n,std::vector<int> sol, std::vector<std::string> colors) {
     if(esSolucion(n,sol)){
         for(int k = 0; k<n; k++){
-            std::cout << (char)('a' + sol[k])<< " ";
+            std::cout << (colors[sol[k]])<< " ";
         }
         std::cout << "\n";
     }
     else{
-        for(int i=0; i<m; i++){
+        for(int i=0; i<colors.size(); i++){
             sol[k]=i; //marcamos
-            resolver(k+1,n,m,sol); //vamos al siguiente
+            resolver(k+1,n,sol,colors); //vamos al siguiente
             sol[k]=-1; //desmarcamos
         }
-    }
-}
-
-void resolver(const int& n, const int& m) {
-     //n = tamaño de la combinacion
-    //m = elementos disponibles
-    std::vector<int> sol(n,-1);
-    resolver(0,n,m,sol);
+    } 
     
 }
-
+#define DOMJUDGE
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
-    
-    int n,m;
-    std::cin >> m >> n;
-    if (!std::cin)
+    int n;
+    std::cin >> n;
+    if (n<=0)
         return false;
-    resolver(n,m);
-    std::cout << "\n";
+    
+
+    std::vector <std::string> colors = { "azul", "rojo", "verde"};  
+    std::vector<int> sol(n,-1);
+    // escribir sol
+    resolver(0, n, sol, colors);
     
     return true;
     
