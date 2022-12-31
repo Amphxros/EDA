@@ -1,3 +1,5 @@
+//Amparo Rubio Bellon
+//VJ54
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -7,19 +9,18 @@
 enum Colores { azul, rojo, verde };
 
 bool esSolucion(int k, std::vector<int>& piezas, const int& tam) {
-    return k == tam && piezas[rojo] > piezas[verde] + piezas[azul];
+    return k == tam && piezas[rojo] >= piezas[verde];
 }
 bool esViable(int k, std::vector<int>& sol, std::vector<int>& piezas, const int& tam) {
    
     if (k >= tam) return false;
     if (k == 0 && sol[k] != rojo) return false;
     if (k > 0 && sol[k - 1] == verde) return sol[k] != verde;
-    if (piezas[verde] > piezas[azul]) return false;
     
     return true;
 }
 // función que resuelve el problema
-void resolver(int k, std::vector<std::string> colors, std::vector<int> piezas, std::vector<int> sol,int tam) {
+void resolver(int k, std::vector<std::string> colors, std::vector<int> piezas, std::vector<int>& sol,int tam) {
     if (esSolucion(k, piezas, tam)) {
         for (int i = 0; i < sol.size(); i++) {
             std::cout << colors[sol[i]] << " ";
@@ -60,8 +61,8 @@ bool resuelveCaso() {
     std::vector<std::string> colors = { "azul","rojo","verde" };
     std::vector<int> piezas = std::vector<int>(colors.size(), 0);
     std::vector<int> sol = std::vector<int>(n, -1);
-
-    resolver(0, colors, piezas, sol, n);
+    
+    resolver(0, colors, piezas, sol,n);
 
     // escribir sol
 
