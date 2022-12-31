@@ -1,32 +1,43 @@
-// Amparo Rubio Bellon
-// VJ54
+// Nombre del alumno .....
+// Usuario del Juez ......
 
 
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <stack>
 #include <vector>
-#include <string>
 
-bool esSolucion(const int& n, std::vector<int>sol) {
-    return sol[n-1] != -1;
-}
 
 // función que resuelve el problema
-void resolver(int k,int n,std::vector<int> sol, std::vector<std::string> colors) {
-    if(esSolucion(n,sol)){
-        for(int k = 0; k<n; k++){
-            std::cout << (colors[sol[k]])<< " ";
+int resolver(std::stack<int> calcetines) {
+    int desparejos=0;
+    std::vector<int> pares;
+    
+    
+    while(!calcetines.empty()){
+        int top = calcetines.top();
+        if (pares.empty()) {
+            pares.push_back(top);
+            desparejos++;
         }
-        std::cout << "\n";
+        else {
+            int i = 0;
+            while (i < pares.size() && pares[i] != top) i++;
+            if (i == pares.size()) {
+                pares.push_back(top);
+                desparejos++;
+            }
+            else {
+                pares.erase(pares.begin() + i);
+               
+            }
+        }
+        
+        calcetines.pop();
     }
-    else{
-        for(int i=0; i<colors.size(); i++){
-            sol[k]=i; //marcamos
-            resolver(k+1,n,sol,colors); //vamos al siguiente
-            sol[k]=-1; //desmarcamos
-        }
-    } 
+
+    return desparejos;
     
 }
 #define DOMJUDGE
@@ -39,11 +50,15 @@ bool resuelveCaso() {
     if (n<=0)
         return false;
     
-
-    std::vector <std::string> colors = { "azul", "rojo", "verde"};  
-    std::vector<int> sol(n,-1);
+    std::stack<int> calcetines;
+    for(int i=0;i<n;i++){
+        int calcetin;
+        std::cin >> calcetin;
+        calcetines.push(calcetin);
+    }
+   
     // escribir sol
-    resolver(0, n, sol, colors);
+    std::cout << resolver(calcetines)<< "\n";
     
     return true;
     

@@ -6,15 +6,16 @@
 
 
 // O(n)  
-int resolver(std::vector<int> v, const int& media) {
+int resolver(const std::vector<int>& v, const int& media) {
     
     int suma=0;
-
+    int ult=11;
     for(int i=0;i<v.size();i++){
         suma+=v[i];    
     }
+    ult= (media* (v.size() + 1) - suma);
 
-    return (int)(media* (v.size() + 1) - suma);    
+    return ult;    
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
