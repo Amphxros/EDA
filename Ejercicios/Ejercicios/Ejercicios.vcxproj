@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\03 Backtracking\02 Variaciones Sin Repeticion\02_Variaciones_Sin_Repeticion.cpp" />
+    <ClCompile Include="..\..\22-23\03 Backtracking\03 N Reinas\03_N_Reinas.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
