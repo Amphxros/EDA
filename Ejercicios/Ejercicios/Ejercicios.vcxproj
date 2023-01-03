@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\03 Backtracking\03 N Reinas\03_N_Reinas.cpp" />
+    <ClCompile Include="..\..\22-23\03 Backtracking\04 Torres De Colores\04_Torres_Colores_v3.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -8,78 +8,40 @@
 
 #include <vector>
 
-// O(log2(n))
-bool resolver(const std::vector<int>& v, int ini, int fin) {
-    
-    if(fin-ini==1){
-        return v[ini]==ini;
-    }
-    else{
-        int mit= (ini + fin)/2;
-        if(v[mit]==mit){
-            return true;
-        }
-        else{
-            if(v[mit] < mit){
-                return resolver(v,mit+1,fin);
-            }
-            else{
-                return resolver(v, ini,mit-1);
-            }
-        }
-
-    }
-}
-
-// Resuelve un caso de prueba, leyendo de la entrada la
-// configuración, y escribiendo la respuesta
-void resuelveCaso() {
-   int n;
-	std::cin >> n;
-	if (n >= 1) { //caso especial
-		std::vector<int> v(n);
-
-		for (int i = 0; i < n; i++) {
-			int c;
-			std::cin >> c;
-			v[i] = c;
+bool elemento_situado(const std::vector <int>& v, int ini, int fin) { // o(log n)
+	if (fin - ini > 1) {
+		int mit = fin + ini / 2;
+		if (v[mit] > mit) {
+			return elemento_situado(v, ini, mit);
 		}
-
-		// escribir sol
-		if (resolver(v, 0, n-1)) {
-			std::cout << "SI" << "\n";
+		else if (v[mit] < mit) {
+			return elemento_situado(v, mit, fin);
 		}
-		else {
-			std::cout << "NO" << "\n";
-		}
+		else return true;
 	}
-	else {
-		std::cout << "NO" << "\n";
-	}
-    
-    
+	else if (fin - ini == 1) return v[ini] == ini;
+	else return false;
 }
+    
+	
 
 int main() {
-    // Para la entrada por fichero.
-    // Comentar para acepta el reto
-    #ifndef DOMJUDGE
-     std::ifstream in("datos.txt");
-     auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-     #endif 
-    
-    
-    int numCasos;
-    std::cin >> numCasos;
-    for (int i = 0; i < numCasos; ++i)
-        resuelveCaso();
-
-    
-    // Para restablecer entrada. Comentar para acepta el reto
-     #ifndef DOMJUDGE // para dejar todo como estaba al principio
-     std::cin.rdbuf(cinbuf);
-     system("PAUSE");
-     #endif
-    
-    return 0;
+	int casosPrueba = 0;
+	std::cin >> casosPrueba;
+	for (int i = 0; i < casosPrueba; i++) {
+		std::vector<int> v;
+	    int cant = 0;
+	    std::cin >> cant;
+	    for (int i = 0; i < cant; i++) {
+		    int n;
+		    std::cin >> n;
+		    v.push_back(n);
+	}
+    	if (elemento_situado(v, 0, v.size())) //o(log n)
+			std::cout << "SI" << "\n";
+		else 
+            std::cout << "NO" << "\n";
+	}
+	return 0;
 }
+	
