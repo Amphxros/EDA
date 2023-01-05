@@ -10,17 +10,40 @@
 
 using productos=std::vector<int>;
 
-bool superVisitado(int k, std::vector<int>& visitados) {
-    return visitados[k] <= 2;
+bool esSuperVisitado(int k, const std::vector<int>&super){
+    return super[k]>=3;
+}
+bool esSolucion(int k, const int & n){
+
 }
 
-void resolver(int k,const std::vector<productos>& compra ,std::vector<int>& visita,std::vector<int>& cesta, const int& nSupers,const int& nProductos, int& gasto){
+void resolver(int k,std::vector<int>& gasto,std::vector<int>& compra,const std::vector<int>& super,
+ const std::vector<int>& productos, std::vector<int>& visitaPorSuper, const int& nProductos,const int& nSupers){
+    if(esSolucion(k,nProductos)){
+        int gastoTotal=0;
+        for(int i=0;i<nProductos; i++){
+            gastoTotal+=compra[i];
+        }
+        gasto.push_back(gastoTotal);
+    }
 
+    for(int i = 0; i < nSupers; i++){
+        if(!esSuperVisitado(i,visitaPorSuper)){
+            visitaPorSuper[i]++;
+            compra[k]=productos[i];
+        }
+
+        resolver(k+1,gasto, compra,super,productos,visitaPorSuper,nProductos,nSupers);
+        
+        visitaPorSuper[i]--;
+        compra[k]=0;
+    }
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
-void resuelveCaso() {
+void resuelveCaso() 
+{
     // leer los datos de la entrada
     int nSupers, nProductos;
     std::cin >> nSupers >> nProductos;
@@ -33,7 +56,7 @@ void resuelveCaso() {
            std::cin >> producto;
            super[i].push_back(producto);
        }
-
+   }
     std::vector<int> cesta(nProductos, 0);
     std::vector<int> visitados(nSupers, 0);
     int gasto=0;
