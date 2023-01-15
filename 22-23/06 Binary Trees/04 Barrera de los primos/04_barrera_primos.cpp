@@ -20,9 +20,12 @@ bool esPrimo(int n){
 
 // función que resuelve el problema
 int resolver(const bintree<int>& tree, int k, int& profMin, int& nodo) {
+    //Si esta vacio o la raiz no es accesible
     if (tree.empty() || esPrimo(tree.root())) return -1;
 
+    
     else {
+        //si es mod 7 nos interesa
         if (tree.root() % 7 == 0) {
             if (profMin == 0 || k < profMin) {
                 profMin = k;
@@ -31,7 +34,7 @@ int resolver(const bintree<int>& tree, int k, int& profMin, int& nodo) {
             return 1;
 
         }
-
+        //si no seguimos buscando
         else {
             int izq = nodo, der = nodo;
             int nodoizq = nodo;
