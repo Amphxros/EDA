@@ -15,8 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\03 Backtracking\04 Torres De Colores\04_Torres_Colores_v3.cpp">
+    <ClCompile Include="..\..\22-23\06 Binary Trees\04 Barrera de los primos\04_barrera_primos.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\22-23\06 Binary Trees\04 Barrera de los primos\bintree_eda.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

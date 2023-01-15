@@ -20,7 +20,7 @@ bool elemento_situado(const std::vector <int>& v, int ini, int fin) { // o(log n
 		else return true;
 	}
 	else if (fin - ini == 1) return v[ini] == ini;
-	else return false;
+	return false;
 }
     
 	

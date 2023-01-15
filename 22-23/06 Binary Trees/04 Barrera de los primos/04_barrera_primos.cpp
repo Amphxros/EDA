@@ -7,7 +7,7 @@
 #include <fstream>
 #include "bintree_eda.h"
 
-// coste constante ya que en este ejercicio los resultados interesantes son los multiplos de 7
+// O(1) ya que en este ejercicio los resultados interesantes son los multiplos de 7
 bool esPrimo(int n){
     if(n == 1) return false;
     if(n == 2) return true;
@@ -19,39 +19,38 @@ bool esPrimo(int n){
 }
 
 // función que resuelve el problema
-int resolver(const bintree<int>& tree,int padre, int k) {
-    if(tree.empty()){
-        return -1;
-    }
-    else{
-        k++;
-        if(!esPrimo(padre)){
-            padre=tree.root();
-            int kL=k;
-            int kR=k;
-            int izq = resolver(tree.left(),padre,kL);
-            int der = resolver(tree.right(),padre,kR);
-           
-            if (izq == -1 && der == -1) return padre;
+int resolver(const bintree<int>& tree, int k, int& profMin, int& nodo) {
+    if (tree.empty() || esPrimo(tree.root())) return -1;
+
+    else {
+        if (tree.root() % 7 == 0) {
+            if (profMin == 0 || k < profMin) {
+                profMin = k;
+                nodo = tree.root();
+            }
+            return 1;
+
+        }
+
+        else {
+            int izq = nodo, der = nodo;
+            int nodoizq = nodo;
+            int profIzq = k;
             
-            if(kL<kR){
-                if (der != -1) return der;
-                else return izq;
-            }
-            else{
+            der = resolver(tree.right(), k + 1, profMin, nodo);
+            izq = resolver(tree.left(),  k + 1, profMin, nodo);
+          
 
-                if (izq != -1) return izq;
-                else return der;
+            if (izq == -1 && der == -1) {
+                return -1;
+            }
+
+            else {
+                return 1;
             }
 
         }
-        else{
-            return padre;
-        }
-       
-      
     }
-    return -1;
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la
@@ -59,14 +58,14 @@ int resolver(const bintree<int>& tree,int padre, int k) {
 void resuelveCaso() {
     // leer los datos de la entrada
     bintree<int> tree = leerArbol(-1);
-    int k = 0;
-    int res= resolver(tree,1,k); //1 para forzar que la raiz sea el proximo padre
-    if(res==-1){
-        std::cout<<"NO HAY\n";
+    int profMin=0, nodo=-1;
+
+    if(tree.empty()|| esPrimo(tree.root())|| resolver(tree,0,profMin,nodo) ==-1){
+        std::cout << "NO HAY"<<"\n";
     }
     else{
-        std::cout<<res<<" "<< k << "\n";
-    } 
+        std::cout << nodo << " " << profMin +1 << "\n";
+    }
     
 }
 
