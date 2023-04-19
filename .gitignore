@@ -1,6 +1,9 @@
 *.vs
+*.vscode
 *.ipch
 *.user
 *.log
 *.recipe
+*.exe
+Ejercicios/Debug
 Ejercicios/Ejercicios/Debug
