@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\Examenes\01_Calderilla\01_Calderilla.cpp" />
+    <ClCompile Include="..\..\22-23\01 Linear Algorithms\06 Rescate\06_rescate.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
