@@ -8,18 +8,7 @@
 
 // O(n)
 bool resolver(const std::vector<int>& v, int p) {
-    int r=0;
-    if (p < 0) {
-        for (int i = 0; i < p; i++)
-            r += v[i];
-        for (int i = p + 1; i < v.size(); i++)
-            r -= v[i];
-
-        return r >= 0;
-    }
-    else {
-        return true;
-    }
+   
 }
 
 // Resuelve un caso de prueba, leyendo de la entrada la

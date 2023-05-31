@@ -1,49 +1,96 @@
-// Amparo Rubio Bellon
-// VJ54
-
+// Amparo Rubio Bellón
+// Vj54
 
 #include <iostream>
+#include <sstream>
 #include <iomanip>
 #include <fstream>
 #include <string>
-#include "list_eda.h"
+#include <ctype.h>
 
 #include "treemap_eda.h"
+#include "list.h"
 
-typedef map<std::string, list<int>*> Diccionario;
+using namespace std;
+
+typedef map<string, list<int>*> Diccionario;
+
+bool contains(Diccionario dic, string key) {
+    map<string, list<int>*>::iterator it = dic.begin();
+
+    while (it != dic.end() && it->clave != key) {
+        ++it;
+    }
+
+    return it != dic.end();
+
+}
+
+void leerDiccionario(Diccionario& dic, const int & n){
+    string line;
+    int i=0;
+    while(i<n){
+        getline(cin, line);
+        stringstream lines(line); //procesar la línea
+        string key;
+
+        while(lines >> key){
+           if(key.length()>2){
+                for(int j=0; key[j];j++){
+                    key[j]=tolower(key[j]);
+                }
+                if(!contains(dic,key)){
+                    list<int>* l = new list<int>();
+                    l->push_back(i+1);
+                    dic.insert({key,l});
+                }
+                else{
+                    if(dic.at(key)->back() != i+1)
+                        dic.at(key)->push_back(i + 1); //si la clave ya existia, modificamos su lista
+                }
+            }
+        }
+        i++;
+
+    }
+
+}
 
 // función que resuelve el problema
-void resolver() {
-    
+void resolver( Diccionario dic) {
+    map<string, list<int>*>::iterator it = dic.begin();
+    while(it != dic.end()){
+        cout<< it->clave << " ";
+        auto lit = it->valor->begin();
+        while (lit!=it->valor->end())
+        {
+            cout << *lit << " ";
+            lit++;
+        }
+        
+        cout << "\n";
+        
+        ++it;
+    }
     
 }
 
-// Resuelve un caso de prueba, leyendo de la entrada la
 
+#define DOMJUDGE
 // Resuelve un caso de prueba, leyendo de la entrada la
 // configuración, y escribiendo la respuesta
 bool resuelveCaso() {
     // leer los datos de la entrada
     int n;
-    std::cin>>n;
-    if (! std::cin || n<=0)
+    cin >> n;
+    if (n<=0)
         return false;
-
     Diccionario dic;
-    std::string palabra;
-    std::getline(std::cin,palabra);
+    string l;
+    getline(cin,l);
+    leerDiccionario(dic,n);
+    resolver(dic);
 
-    map<std::string, list<int>*>::iterator it= dic.begin();
-
-    while (it!=dic.end()){
-        std::cout<<it->first<<" ";
-        it++;
-    }
-    
-    
-    
-    // escribir sol
-    
     
     return true;
     

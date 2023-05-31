@@ -20,7 +20,7 @@ bool resolver(std::vector<int> v, int ini, int fin) {
 			return true;
 		}
 		else if(v[mit]>mit){
-			return resolver(v,ini,mit-1);
+			return resolver(v,ini,mit);
 		}
 		else{
 			return resolver(v,mit+1,fin);

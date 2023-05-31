@@ -19,7 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\22-23\01 Linear Algorithms\06 Rescate\06_rescate.cpp" />
+    <ClCompile Include="..\..\22-23\07 Dictionarys\01 Referencias Cruzadas\01_Referencias_Cruzadas.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\22-23\07 Dictionarys\01 Referencias Cruzadas\deque.h" />
+    <ClInclude Include="..\..\22-23\07 Dictionarys\01 Referencias Cruzadas\list.h" />
+    <ClInclude Include="..\..\22-23\07 Dictionarys\01 Referencias Cruzadas\treemap_eda.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

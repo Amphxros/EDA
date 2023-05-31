@@ -17,7 +17,7 @@
 #include <stdexcept>
 #include <cassert>
 
-#include "deque_eda.h"
+#include "deque.h"
 
 template <class T>
 class list : public deque<T> {

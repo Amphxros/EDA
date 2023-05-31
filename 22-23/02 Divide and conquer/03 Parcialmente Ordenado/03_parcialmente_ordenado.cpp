@@ -8,33 +8,14 @@
 #include <vector>
 
 // función que resuelve el problema
-bool resolver(const std::vector<int> & v, int ini, int fin, int& min, int& max) {
+bool resolver(const std::vector<int> & v, int ini, int fin) {
     
-    if(fin-ini ==1){
-        if(v[ini]< min){
-            min=v[ini];
-        }
-        if(v[ini]>max){
-
-            max=v[ini];
-        }
-
-        return min==v[ini] || max==v[ini];
+    if(fin-ini <=1){
+     return v[fin] - v[ini] >=0;
     }
     else{
-        int mit= (fin + ini)/2;
-        int min_izq= std::numeric_limits<int>::max();
-        int max_izq= std::numeric_limits<int>::min();
-        
-        int min_der= std::numeric_limits<int>::max();
-        int max_der= std::numeric_limits<int>::min();
-
-        bool mitIzq= resolver(v,0,mit,min_izq,max_izq);
-        bool mitDer= resolver(v,mit,fin,min_der,max_der);
-
-        return max_der>=max_izq && min_izq<=min_der;
-
-
+        int mit = (ini+fin)/2;
+        return resolver(v,ini,mit) && resolver(v,mit,fin);
     }
 }
 
@@ -43,20 +24,17 @@ bool resolver(const std::vector<int> & v, int ini, int fin, int& min, int& max) 
 void resuelveCaso() {
     // leer los datos de la entrada
     std::vector<int> v;
-
-    int n=-1;
-
-    while(n!=0 && !std::cin){
+    int n=0;
+   do{
         std::cin>>n;
         v.push_back(n);
-    }
-    v.pop_back();
+   } while (n != 0 && !std::cin);
+    v.pop_back(); //eliminamos el 0
     
     // escribir sol
     n=(int)(v.size()-1);
-    int min = std::numeric_limits<int>::max();
-    int max = std::numeric_limits<int>::min();
-    if(resolver(v,0,n,min,max)){
+
+    if(resolver(v,0,n)){
         std::cout <<"SI"<< "\n";
     }
     else{
@@ -64,6 +42,8 @@ void resuelveCaso() {
     }
     
 }
+
+#define DOMJUDGE
 
 int main() {
     // Para la entrada por fichero.
